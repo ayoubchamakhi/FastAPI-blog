@@ -8,3 +8,6 @@ dependencies = [
     "fastapi[standard]>=0.128.1",
     "sqlalchemy>=2.0.46",
 ]
+
+[tool.ruff]
+ignore = ["F401"] # Ruff does not delete unused imports
