@@ -13,5 +13,7 @@ dependencies = [
     "sqlalchemy>=2.0.46",
 ]
 
-[tool.ruff]
-ignore = ["F401"] # Ruff does not delete unused imports
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["F401"]
+
