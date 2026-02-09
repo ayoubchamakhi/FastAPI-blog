@@ -44,7 +44,7 @@ class PostBase(BaseModel):
 
 
 class PostCreate(PostBase):
-    user_id: int  # TESTING
+    pass
 
 
 class PostUpdate(BaseModel):
