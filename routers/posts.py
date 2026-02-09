@@ -50,7 +50,7 @@ async def get_posts(db: Annotated[AsyncSession, Depends(get_db)]):
 
 
 # READ POST #
-@router.get("/api/posts/{post_id}", response_model=PostResponse)
+@router.get("/{post_id}", response_model=PostResponse)
 async def get_post(post_id: int, db: Annotated[AsyncSession, Depends(get_db)]):
     result = await db.execute(
         select(models.Post)
