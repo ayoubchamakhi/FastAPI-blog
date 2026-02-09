@@ -92,7 +92,7 @@ async def post_page(
 
 # USER POSTS PAGE #
 @app.get(
-    "/{user_id}",
+    "/users/{user_id}",
     include_in_schema=False,
     name="user_posts",
 )
@@ -121,6 +121,26 @@ async def user_posts_page(
         request,
         "user_posts.html",
         {"posts": posts, "user": user, "title": f"{user.username}'s Posts"},
+    )
+
+
+# LOGIN #
+@app.get("/login", include_in_schema=False)
+async def login_page(request: Request):
+    return templates.TemplateResponse(
+        request,
+        "login.html",
+        {"title": "Login"},
+    )
+
+
+# REGISTER #
+@app.get("/register", include_in_schema=False)
+async def register_page(request: Request):
+    return templates.TemplateResponse(
+        request,
+        "register.html",
+        {"title": "Register"},
     )
 
 
